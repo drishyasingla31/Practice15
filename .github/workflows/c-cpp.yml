@@ -19,3 +19,16 @@ jobs:
       run: gcc Logic.c -o Logic
     - name: Run Program
       run: ./Logic
+    - name: Notify Success 
+      if: success() 
+      run: |
+       curl -H "Title: CI Success" \ 
+            -d "C program compiled and executed successfully." \ 
+            https://ntfy.sh/log310807
+
+    - name: Notify Failure 
+      if: failure() 
+      run: |
+       curl -H "Title: CI Failed" \ 
+            -d "Build or execution failed in C/C++ CI pipeline." \ 
+            https://ntfy.sh/log310807
