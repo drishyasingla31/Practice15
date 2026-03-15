@@ -7,7 +7,7 @@ int main()
     printf("Enter three vgyuhjbnmkl ");
         scanf("%d %d %d", &a, &b, &c);
 
-    sum = a + b + c;
+    sum = a + b + c
 
     printf("Sum = %d\n", sum);
 
